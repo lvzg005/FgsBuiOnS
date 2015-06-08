@@ -175,7 +175,7 @@ public class Alipay extends CordovaPlugin{
 	}
 	
 	
-	protected boolean checkAccount(CallbackContext callbackContext){
+	protected boolean checkAccount(final CallbackContext callbackContext){
 		
 		Runnable checkRunnable = new Runnable() {
 
