@@ -3,6 +3,7 @@ var exec = require('cordova/exec');
 module.exports = {
     
     isInstalled: function (onSuccess, onError) {
+		alert(xxxxx);
         exec(onSuccess, onError, "AliPay", "checkAccount", []);
     },
 
