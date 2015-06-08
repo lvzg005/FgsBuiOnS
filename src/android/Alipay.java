@@ -51,7 +51,7 @@ public class Alipay extends CordovaPlugin{
 			return false;
 		}
 		
-		return super.execute(action, args, callbackContext);
+		//return super.execute(action, args, callbackContext);
 	}
 	
 	protected boolean aliPay(JSONArray args,final CallbackContext callbackContext) throws JSONException{
