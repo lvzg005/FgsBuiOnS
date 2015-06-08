@@ -35,17 +35,17 @@ public class Alipay extends CordovaPlugin{
 	private Activity activity = cordova.getActivity();
 	
 	@Override
-	public boolean execute(String action, JSONArray args,CallbackContext callbackContext) throws JSONException {
+	public boolean execute(String action, JSONArray args,final CallbackContext callbackContext) throws JSONException {
 		
 		if (action.equals("aliPay")) {
 			// aliPay pay
 			return aliPay(args, callbackContext);
 		} else if(action.equals("checkAccount")){
 			
-			//return checkAccount(callbackContext);
-			callbackContext.success("checkAccount--true");
-			currentCallbackContext = callbackContext;
-			return true;
+			return checkAccount(callbackContext);
+			//callbackContext.success("checkAccount--true");
+			//currentCallbackContext = callbackContext;
+			//return true;
 		}
 		
 		return super.execute(action, args, callbackContext);
