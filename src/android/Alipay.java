@@ -196,7 +196,7 @@ public class Alipay extends CordovaPlugin{
 
 		Thread checkThread = new Thread(checkRunnable);
 		checkThread.start();
-		
+		callbackContext.success("true");
 		currentCallbackContext = callbackContext;
 		return true;
 	}
