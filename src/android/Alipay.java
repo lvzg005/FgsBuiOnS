@@ -168,8 +168,11 @@ public class Alipay extends CordovaPlugin{
 	
 	
 	protected boolean checkAccount(CallbackContext callbackContext){
+		
 		try {
 			PayTask payTask = new PayTask(activity);
+			callbackContext.success("payTask init success.");
+			/**
 			if (payTask == null) {
 				callbackContext.error("payTask is null.");
 				return false;
@@ -187,9 +190,10 @@ public class Alipay extends CordovaPlugin{
 			} else {
 				callbackContext.success("true");
 			}
+			*/
 		} catch(Exception e) {
-		   callbackContext.error("payTask is null.");
-				return false; 
+			callbackContext.error("payTask is null." + e.getMessage());
+			return false; 
 		}
 		
 		currentCallbackContext = callbackContext;
