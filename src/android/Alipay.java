@@ -181,12 +181,16 @@ public class Alipay extends CordovaPlugin{
 
 			@Override
 			public void run() {
+			try {
 				// 构造PayTask 对象
 				PayTask payTask = new PayTask(activity);
 				// 调用查询接口，获取查询结果
 				boolean isExist = payTask.checkAccountIfExist();
 
 				callbackContext.success(isExist?"true":"false");
+				} catch(Exception e) {
+					callbackContext.success("error:" + e.getMessage());
+				}
 			}
 		};
 
