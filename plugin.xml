@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-alipay"
+    version="0.1.0">
+    <name>AliPay</name>
+    <description>A cordova plugin, a JS version of aliPay SDK</description>
+    <license>MIT</license>
+    <keywords>cordova</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/alipay.js" name="AliPay">
+        <clobbers target="AliPay" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AliPay">
+                <param name="android-package" value="com.seadde.alipay.cordova.Alipay"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity
+				android:name="com.alipay.sdk.app.H5PayActivity"
+				android:configChanges="orientation|keyboardHidden|navigation"
+				android:exported="false"
+				android:screenOrientation="behind" >
+			</activity>
+			<activity
+				android:name="com.alipay.sdk.auth.AuthActivity"
+				android:configChanges="orientation|keyboardHidden|navigation"
+				android:exported="false"
+				android:screenOrientation="behind" >
+			</activity>
+        </config-file>
+
+        <source-file src="src/android/Base64.java" target-dir="src/com/seadde/alipay/cordova" />
+		<source-file src="src/android/SignUtils.java" target-dir="src/com/seadde/alipay/cordova" />
+		<source-file src="src/android/PayResult.java" target-dir="src/com/seadde/alipay/cordova" />
+		<source-file src="src/android/Alipay.java" target-dir="src/com/seadde/alipay/cordova" />
+		
+        <source-file src="src/android/alipaySDK-20150602.jar" target-dir="libs" />
+       
+    </platform>
+</plugin>
