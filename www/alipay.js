@@ -3,7 +3,7 @@ var exec = require('cordova/exec');
 module.exports = {
     
     isInstalled: function (onSuccess, onError) {
-        exec(onSuccess, onError, "Alipay", "checkAccount", []);
+        exec(onSuccess, onError, "AliPay", "checkAccount", []);
     },
 
     /**
@@ -21,7 +21,7 @@ module.exports = {
      * 		});
      * </code>
      */  
-    wxPay: function(message, onSuccess, onError) {
-        exec(onSuccess, onError, "Alipay", "aliPay", [message]);
+    aliPay: function(message, onSuccess, onError) {
+        exec(onSuccess, onError, "AliPay", "aliPay", [message]);
     }
 };
