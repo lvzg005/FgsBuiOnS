@@ -32,7 +32,7 @@ public class Alipay extends CordovaPlugin{
 	
 	public static CallbackContext currentCallbackContext;
 	
-	private Activity activity = new com.seadde.mobilesafety.MainActivity();
+	private Activity activity = cordova.getActivity();
 	
 	@Override
 	public boolean execute(String action, JSONArray args,CallbackContext callbackContext) throws JSONException {
@@ -79,7 +79,7 @@ public class Alipay extends CordovaPlugin{
 				PayTask alipay = new PayTask(activity);
 				// 调用支付接口，获取支付结果
 				String result = alipay.pay(payInfo);
-
+				callbackContext.success(result);
 			}
 		};
 
@@ -87,7 +87,7 @@ public class Alipay extends CordovaPlugin{
 		Thread payThread = new Thread(payRunnable);
 		payThread.start();
 		
-		callbackContext.success("true");
+		//callbackContext.success("true");
 		
 		currentCallbackContext = callbackContext;
 		
@@ -171,7 +171,7 @@ public class Alipay extends CordovaPlugin{
 	
 	
 	protected boolean checkAccount(CallbackContext callbackContext){
-		/**
+		
 		try {
 			PayTask payTask = new PayTask(activity);
 			callbackContext.success("payTask init success.");
@@ -198,7 +198,7 @@ public class Alipay extends CordovaPlugin{
 			callbackContext.error("payTask is null." + e.getMessage());
 			return false; 
 		}
-		*/
+		
 		callbackContext.success("checkAccount--true");
 		currentCallbackContext = callbackContext;
 		return true;
