@@ -4,7 +4,7 @@ module.exports = {
     
     isInstalled: function (onSuccess, onError) {
 		alert("xxxxx1");
-        exec(onSuccess, onError, "AliPay", "checkAccount", []);
+        exec(onSuccess, onError, "AliPay", "checkAccount1", []);
 		alert("xxxxx2");
     },
 
