@@ -58,6 +58,7 @@ public class Alipay extends CordovaPlugin{
 		final JSONObject params = args.getJSONObject(0);
 		
 		String outTradeNo = params.getString("guarantNo");
+		/**
 		// 订单
 		String orderInfo = getOrderInfo("手机延保-测试", "手机延保的详细描述-测试", "0.01",outTradeNo);
 		
@@ -90,7 +91,8 @@ public class Alipay extends CordovaPlugin{
 		Thread payThread = new Thread(payRunnable);
 		payThread.start();
 		
-		//callbackContext.success("true");
+		*/
+		callbackContext.success("true");
 		
 		currentCallbackContext = callbackContext;
 		
