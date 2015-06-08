@@ -42,7 +42,10 @@ public class Alipay extends CordovaPlugin{
 			return aliPay(args, callbackContext);
 		} else if(action.equals("checkAccount")){
 			
-			return checkAccount(callbackContext);
+			//return checkAccount(callbackContext);
+			callbackContext.success("checkAccount--true");
+			currentCallbackContext = callbackContext;
+			return true;
 		}
 		
 		return super.execute(action, args, callbackContext);
