@@ -168,24 +168,30 @@ public class Alipay extends CordovaPlugin{
 	
 	
 	protected boolean checkAccount(CallbackContext callbackContext){
-		PayTask payTask = new PayTask(activity);
-		if (payTask == null) {
-			callbackContext.error("payTask is null.");
-			return false;
+		try {
+			PayTask payTask = new PayTask(activity);
+			if (payTask == null) {
+				callbackContext.error("payTask is null.");
+				return false;
+			}
+			Boolean result = payTask.checkAccountIfExist();
+			
+			if (result == null) {
+				callbackContext.error("result is null.");
+				return false;
+			}
+			
+			if (result) {
+				callbackContext.error(ERROR_ALI_NOT_INSTALLED);
+				return false;
+			} else {
+				callbackContext.success("true");
+			}
+		} catch(Exception e) {
+		   callbackContext.error("payTask is null.");
+				return false; 
 		}
-		Boolean result = payTask.checkAccountIfExist();
 		
-		if (result == null) {
-			callbackContext.error("result is null.");
-			return false;
-		}
-		
-		if (result) {
-			callbackContext.error(ERROR_ALI_NOT_INSTALLED);
-			return false;
-		} else {
-			callbackContext.success("true");
-		}
 		currentCallbackContext = callbackContext;
 		return true;
 	}
