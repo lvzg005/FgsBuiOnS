@@ -167,7 +167,7 @@ public class Alipay extends CordovaPlugin{
 	}
 	
 	
-	protected boolean isInstalled(CallbackContext callbackContext){
+	protected boolean checkAccount(CallbackContext callbackContext){
 		PayTask payTask = new PayTask(activity);
 		
 		Boolean result = payTask.checkAccountIfExist();
