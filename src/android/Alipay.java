@@ -46,6 +46,9 @@ public class Alipay extends CordovaPlugin{
 			//callbackContext.success("checkAccount--true");
 			//currentCallbackContext = callbackContext;
 			//return true;
+		} else {
+			callbackContext.error("action["+ action + "] is not defined.");
+			return false;
 		}
 		
 		return super.execute(action, args, callbackContext);
