@@ -21,10 +21,10 @@
         
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AliPay">
-                <param name="android-package" value="com.seadde.alipay.cordova.Alipay"/>
+                <param name="android-package" value="com.seadde.alipay.cordova.Alipay2"/>
             </feature>
         </config-file>
-
+		<!--
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<activity
 				android:name="com.alipay.sdk.app.H5PayActivity"
@@ -51,10 +51,11 @@
 		
         <source-file src="src/android/Base64.java" target-dir="src/com/seadde/alipay/cordova" />
 		<source-file src="src/android/SignUtils.java" target-dir="src/com/seadde/alipay/cordova" />
-		<source-file src="src/android/PayResult.java" target-dir="src/com/seadde/alipay/cordova" />
-		<source-file src="src/android/Alipay.java" target-dir="src/com/seadde/alipay/cordova" />
+		<source-file src="src/android/PayResult.java" target-dir="src/com/seadde/alipay/cordova" />-->
+		<source-file src="src/android/Alipay2.java" target-dir="src/com/seadde/alipay/cordova" />
 		
-        <source-file src="src/android/alipaySDK-20150602.jar" target-dir="libs" />
+		<!--
+        <source-file src="src/android/alipaySDK-20150602.jar" target-dir="libs" />-->
        
     </platform>
 </plugin>
