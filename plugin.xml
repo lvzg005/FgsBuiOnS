@@ -55,7 +55,9 @@
 		<source-file src="src/android/Alipay.java" target-dir="src/com/seadde/alipay/cordova" />
 		
 		
-        <source-file src="src/android/alipaySDK-20150602.jar" target-dir="libs" />
+        <source-file src="src/android/libs/alipaysdk.jar" target-dir="libs" framework="true" />
+		<source-file src="src/android/libs/alipaysecsdk.jar" target-dir="libs" framework="true" />
+		<source-file src="src/android/libs/alipayutdid.jar" target-dir="libs" framework="true" />
        
     </platform>
 </plugin>
